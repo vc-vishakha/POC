@@ -1,0 +1,47 @@
+<div class="login-page">
+  <div class="content">
+    <form class="login-form" fxFlex>
+      <div class="text-center">
+        <h3 class="app-name">Login</h3>
+      </div>
+      <form (ngSubmit)="login()" name="loginForm" [formGroup]="loginForm" novalidate>
+        <div class="controls" fxFlex fxlayout="row" fxlayout.lt-md="column">
+          <div fxFlexFill>
+            <mat-form-field class="w-100">
+              <input matInput placeholder="Email" formControlName="email" required />
+              <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('email').hasError('email')">
+                Enter valid Email
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="controls" fxFlex fxLayout="row" fxLayout.lt-md="column">
+          <div fxFlexFill>
+            <mat-form-field class="w-100">
+              <input matInput type="password" placeholder="Password" formControlName="password" required />
+              <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                Password is required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
+                Password must be at least 6 characters
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+          <div fxFlexFill>
+            <button mat-raised-button color="primary" class="w-100" [disabled]="loginForm.invalid">Login</button>
+          </div>
+        </div>
+      </form>
+      <div fxFlex fxLayoutAlign="end">
+        <p class="register-text">
+          <span style="color:#8018e2;cursor: pointer;" [routerLink]="['/register']">Register </span>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

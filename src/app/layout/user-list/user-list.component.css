@@ -1,0 +1,19 @@
+.actionBtn{
+    margin: 2px;
+    /* margin-right: 2px; */
+    float: left
+}
+table { width: 100%; }
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+td,
+th {
+    width: 10%;
+}
+.pull-right{ float: right !important; }
+.margin-10 { margin:10px; }
+.body-content{ padding : 15px; }
+.secondary-text.active{ color: #716969; }
+.padding-15{ padding: 15px; }

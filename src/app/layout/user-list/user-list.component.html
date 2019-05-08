@@ -1,0 +1,73 @@
+
+<div class="page-layout simple fullwidth body-content" fxLayout="column">
+
+  <div class="mat-card p-24 padding-15" fxLayout="row" fxLayoutAlign="space-between">
+      <h3>
+        Manage User
+      </h3>
+  </div>
+
+  <div class="content p-24 mr-24 body-content" >
+    <div class="pull-right" fxLayoutAlign="end right">
+        <button class="pull-right" mat-raised-button color="primary" routerLink="/adduser">Add User</button>
+        &nbsp;
+        <button class="pull-right" mat-raised-button (click)="logOut()">Logout</button>
+    </div>
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Users">
+    </mat-form-field>
+
+    <div class=" content p-24 mr-24 body-content">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- First Name Column -->
+            <ng-container matColumnDef="firstName">
+                <th mat-sort-header="firstName" mat-header-cell *matHeaderCellDef> First Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+            </ng-container>
+
+            <!-- Last Name Column -->
+            <ng-container matColumnDef="lastName">
+              <th mat-sort-header="lastName" mat-header-cell *matHeaderCellDef> Last Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+          </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="email">
+                <th mat-sort-header="email" mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+            </ng-container>
+
+            <!-- Mobile Number Column -->
+            <ng-container matColumnDef="mobile">
+                <th mat-sort-header="mobile" mat-header-cell *matHeaderCellDef> Mobile Number </th>
+                <td mat-cell *matCellDef="let row"> {{row.mobile}} </td>
+            </ng-container>
+
+            <!-- Action Column  -->
+            <ng-container matColumnDef="action" width="20%">
+                <th mat-header-cell *matHeaderCellDef > Action </th>
+                <td mat-cell *matCellDef="let row;let i = index" >
+                    <button mat-raised-button class="btn actionBtn " matTooltip="Edit" (click)="editUser(i)">Edit</button>
+                    <button mat-raised-button color="warn" class="btn actionBtn " matTooltip="Delete" (click)="deleteUser(i)">Delete</button>
+                </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+
+    <h4 class="text-center">Custom Slider</h4>
+    <section class="product-item-slider">
+      <div class="container">
+        <custom-slider id="customSliderContainer"></custom-slider>
+      </div>
+    </section>
+
+  </div>
+</div>

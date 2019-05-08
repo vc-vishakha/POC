@@ -1,0 +1,57 @@
+<div class="page-layout simple fullwidth" fxLayout="column">
+    <div class="content p-24">
+      <div class="add-user-popup">
+        <!-- <h3>{{ formName }}</h3> -->
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ userTitle }}</mat-card-title>
+          </mat-card-header>
+          &nbsp;
+          <mat-card-content>
+            <div class="mb-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
+              <form (ngSubmit)="createUpdate()" name="myUserEdit" [formGroup]="editUserForm">
+                  <div  fxFlex="1 0 auto" fxLayout="row wrap" fxlayoutalign="start center">
+
+                    <mat-form-field fxFlex="100" fxFlex.gt-md="100" fxFlex.gt-xs="100">
+                      <input matInput placeholder="First Name *" formControlName="firstName" />
+                      <mat-error *ngIf="editUserForm.get('firstName').hasError('required')">
+                        First Name is required
+                      </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="100" fxFlex.gt-md="100" fxFlex.gt-xs="100">
+                      <input matInput placeholder="Last Name *" formControlName="lastName" />
+                      <mat-error *ngIf="editUserForm.get('lastName').hasError('required')">
+                        Last Name is required
+                      </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="100" fxFlex.gt-md="100" fxFlex.gt-xs="100">
+                      <input matInput type="email" placeholder="Email *" formControlName="email" />
+                      <mat-error *ngIf="editUserForm.get('email').hasError('required')">
+                        Email is required
+                      </mat-error>
+                      <mat-error *ngIf="editUserForm.get('email').hasError('email')">
+                          Email is invalid
+                      </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="100" fxFlex.gt-md="100" fxFlex.gt-xs="100">
+                      <input matInput type="text" maxlength="10" placeholder="Mobile Number *" formControlName="mobile" (keypress)="validatePhNumber($event)" />
+                      <mat-error *ngIf="editUserForm.get('mobile').hasError('required')">
+                        Mobile is required
+                      </mat-error>
+                    </mat-form-field>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button mat-raised-button type="submit" color="primary" [disabled]="editUserForm.invalid">SUBMIT</button>&nbsp;
+                    <button mat-raised-button type="button" color="warn" (click)="cancelSubmit()">CANCEL</button>
+
+                  </div>
+              </form>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+</div>
