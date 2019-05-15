@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import { PushNotificationsService } from './notification.service';
-import { ConfirmationDialogForUpdateAskComponent } from '../confirmation-dialog-for-ask-update/confirmation-dialog-for-upate.component';
+import { ConfirmationDialogForUpdateAskComponent } from '../../confirmation-dialog-for-ask-update/confirmation-dialog-for-upate.component';
 import { MatDialog } from '@angular/material';
 
 @Injectable({

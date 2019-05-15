@@ -31,6 +31,8 @@ export const externalScripts: IScript[] = [
 })
 export class UserListComponent implements OnInit {
 
+  public file = '';
+
   displayedColumns = ['firstName' , 'lastName', 'email', 'mobile' , 'action'];
   dataSource: MatTableDataSource<any>;
   userData: any = [];

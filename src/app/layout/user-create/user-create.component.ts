@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar  } from '@angular/material';
-import { PushNotificationsService } from '../../services/notification.service';
+import { PushNotificationsService } from '../../common/services/notification.service';
 
 @Component({
   selector: 'app-user-create',

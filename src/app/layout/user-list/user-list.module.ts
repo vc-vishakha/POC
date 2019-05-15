@@ -9,14 +9,18 @@ import { MatButtonModule, MatInputModule, MatFormFieldModule, MatTooltipModule, 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
+import { FileTypPipe } from '../../common/pipes';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [UserListComponent],
+  declarations: [UserListComponent, FileTypPipe],
   imports: [
     CommonModule,
     UserListRoutingModule,
     MatButtonModule, MatInputModule, MatFormFieldModule, MatTooltipModule, MatCardModule, MatIconModule,
     MatTableModule , MatPaginatorModule , MatSortModule, MatSnackBarModule ,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

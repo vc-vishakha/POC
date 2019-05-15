@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { SwService } from './services/sw-service.service';
-import { PushNotificationsService } from './services/notification.service';
+import { SwService } from './common/services/sw-service.service';
+import { PushNotificationsService } from './common/services/notification.service';
 import { ConfirmationDialogForUpdateAskComponent } from './confirmation-dialog-for-ask-update/confirmation-dialog-for-upate.component';
 import { MatDialogModule , MatButtonModule } from '@angular/material';
 

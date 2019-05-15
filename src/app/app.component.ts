@@ -1,7 +1,7 @@
 import { Component , OnInit } from '@angular/core';
 
-import { PushNotificationsService } from './services/notification.service';
-import { SwService } from './services/sw-service.service';
+import { PushNotificationsService } from './common/services/notification.service';
+import { SwService } from './common/services/sw-service.service';
 
 @Component({
   selector: 'app-root',
