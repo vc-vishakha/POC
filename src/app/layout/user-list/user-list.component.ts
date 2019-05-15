@@ -47,7 +47,10 @@ export class UserListComponent implements OnInit {
     private renderer2: Renderer2,
   ) { }
 
-  // TABLE SEARCH FILTER
+  /**
+   * TABLE SEARCH FILTER
+   * @param filterValue Filter value
+   */
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
