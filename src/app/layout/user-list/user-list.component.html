@@ -14,10 +14,10 @@
         <button class="pull-right" mat-raised-button (click)="logOut()">Logout</button>
     </div>
 
-    <!-- <mat-form-field class="p-24">
+    <mat-form-field class="p-24">
       <input matInput placeholder="Enter file name with extension" [(ngModel)]="file" style="margin: 8px;">
       <span><strong>File:</strong> {{ file }}  &nbsp;&nbsp; <strong>Type:</strong> {{ file | fileType }}</span>
-    </mat-form-field> -->
+    </mat-form-field>
 
     <mat-form-field  class="p-24">
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Users">
